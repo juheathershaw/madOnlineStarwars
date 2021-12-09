@@ -1,23 +1,27 @@
-// const { response } = require("express");
-let name = document.getElementById('name')
-const btn = document.getElementById('btn');
+const { response } = require("express");
 
-function handleClick() {
+// const { response } = require("express");
+//let name = document.getElementById('name')
+//const btn = document.getElementById('btn');
+
+///exports.api =  async
+exports.api  =  (req, res)  => {
 
     let randomNumber = Math.floor((Math.random() * 88) + 1) 
     
     let apiURL = 'https://swapi.dev/api/people/' + randomNumber
 
-    axios.get(apiURL).then(function(response) {
+    get(apiURL).then(function(response) {
         updateInfo(response.data)
+        res.send(response.data)
     })
 }
 
-function updateInfo(data) {
-    name.innerText =data.name
-}
+// function updateInfo(data) {
+//     name.innerText =data.name
+// }
 
-btn.addEventListener('click',handleClick);
+//btn.addEventListener('click',handleClick);
 
 // let fetchData = async (url) => {
 //     const response = await fetch(url);

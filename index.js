@@ -1,8 +1,9 @@
-// const express = require('express');
+const express = require('express');
 // path = require('path'),
-// routes = require('./routes/routes');
+routes = require('./routes/routes');
+script = require('./script');
 
-// const app = express();
+const app = express();
 
 // app.get('/hello', (req, res) => {
 //     console.log("FUCK YEAH");
@@ -14,6 +15,6 @@
 //     next();
 // });
 
-// app.get('/api', routes.api);
+app.get('/api', script.api);
 
-// app.listen(8085);
+app.listen(8085);
