@@ -22,4 +22,4 @@ app.get('/hello', async (req, res) => {
         });
 });
 
-app.listen(8085);
+app.listen(process.env.PORT || 8085);
